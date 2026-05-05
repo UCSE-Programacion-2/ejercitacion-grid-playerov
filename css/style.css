@@ -1,3 +1,4 @@
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -22,7 +23,33 @@ img {
   height: auto;
 }
 
-/* TODO alumno:
-   Aplicar Grid en .exercice y .excercice-incomplete
-   con enfoque Mobile First + media queries.
-*/
+.exercice {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.excercice-incomplete {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+
+.excercice-incomplete div img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .exercice {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+
+  .excercice-incomplete {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
